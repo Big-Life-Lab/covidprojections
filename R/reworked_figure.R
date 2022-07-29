@@ -61,6 +61,8 @@
 reworked_figure <-
   function(xaxis,
            yaxis,
+           data,
+           titles,
            yaxis2 = NULL,
            yaxis_button = FALSE,
            yaxis2_button = FALSE,
@@ -75,7 +77,6 @@ reworked_figure <-
            level_upper = NULL,
            level_lower = NULL,
            level_col = NULL,
-           titles,
            vline = FALSE,
            vline_date = NULL,
            smooth = FALSE,
@@ -91,8 +92,7 @@ reworked_figure <-
            constraint_val = NULL,
            specified_type = NULL,
            a = NULL,
-           b = NULL,
-           data) {
+           b = NULL) {
     # ---------- PRESETS ----------
     tickvals <- floor_date(as_date(data$date), "month")
 

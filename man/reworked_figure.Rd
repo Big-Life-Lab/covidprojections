@@ -7,6 +7,8 @@
 reworked_figure(
   xaxis,
   yaxis,
+  data,
+  titles,
   yaxis2 = NULL,
   yaxis_button = FALSE,
   yaxis2_button = FALSE,
@@ -21,7 +23,6 @@ reworked_figure(
   level_upper = NULL,
   level_lower = NULL,
   level_col = NULL,
-  titles,
   vline = FALSE,
   vline_date = NULL,
   smooth = FALSE,
@@ -37,8 +38,7 @@ reworked_figure(
   constraint_val = NULL,
   specified_type = NULL,
   a = NULL,
-  b = NULL,
-  data
+  b = NULL
 )
 }
 \arguments{
@@ -52,6 +52,15 @@ reworked_figure(
   \item color - A character string that indicates the color to use for the trace plot in the nested list in yaxis list that is to be added.
   \item width - A numeric value indicating the width of the trace plot in the nested list inside yaxis list.
   \item short_name - A character string indicating the type of data plotted in current trace. Accepted values: "projections", "Daily signal".
+}}
+
+\item{data}{A dataframe to be used as the source of input data for plotting.}
+
+\item{titles}{A list that contains titles for xaxis, yaxis and the title of the plot.
+\itemize{
+  \item y - A character string for the label for the yaxis
+  \item x - A character string for the label for the xaxis.
+  \item title - A character string for the title of the plot.
 }}
 
 \item{yaxis2}{Another list of lists to add y axis plots. The same list components as above}
@@ -81,13 +90,6 @@ reworked_figure(
 \item{level_lower}{A variable in the dataset which contains the lower limit value for level of detect.}
 
 \item{level_col}{A hex value that indicates the color for the level of detect plot}
-
-\item{titles}{A list that contains titles for xaxis, yaxis and the title of the plot.
-\itemize{
-  \item y - A character string for the label for the yaxis
-  \item x - A character string for the label for the xaxis.
-  \item title - A character string for the title of the plot.
-}}
 
 \item{vline}{A boolean value indicating whether there should be a vertical line added to the plot on the xaxis.}
 
@@ -120,8 +122,6 @@ reworked_figure(
 \item{a}{A numeric value representing the lower limit of yaxis scale}
 
 \item{b}{A numeric value representing the upper limit of yaxis scale.}
-
-\item{data}{A dataframe to be used as the source of input data for plotting.}
 }
 \value{
 A plotly plot showing observed values as bar and smoothed estimates as line plot along with projections as line plot.

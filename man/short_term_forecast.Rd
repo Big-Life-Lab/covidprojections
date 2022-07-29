@@ -7,13 +7,13 @@
 short_term_forecast(
   data,
   input,
-  input_multiplier = 1,
   start_date,
   end_date,
-  omit_last_date = FALSE,
   generation_time,
   incubation_period,
   reporting_delay,
+  omit_last_date = FALSE,
+  input_multiplier = 1,
   horizon = 14,
   rw = 7,
   gp = NULL,
@@ -26,19 +26,19 @@ short_term_forecast(
 
 \item{input}{A data frame column to run projections on.}
 
-\item{input_multiplier}{An initial number to multiply the input column with before running projections.}
-
 \item{start_date}{A start date for training data for EpiNow projections}
 
 \item{end_date}{And end date for training data for EpiNow projections.}
-
-\item{omit_last_date}{A boolean value specifying Whether to omit last date when running projections.}
 
 \item{generation_time}{Time it takes on average for 1 infected person to cause secondary infections.}
 
 \item{incubation_period}{Incubation period of the virus.}
 
 \item{reporting_delay}{The delay in reporting an infection.}
+
+\item{omit_last_date}{A boolean value specifying Whether to omit last date when running projections.}
+
+\item{input_multiplier}{An initial number to multiply the input column with before running projections.}
 
 \item{horizon}{The number of days to forecast into future.}
 

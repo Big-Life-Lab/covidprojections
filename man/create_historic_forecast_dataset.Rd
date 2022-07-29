@@ -6,22 +6,22 @@
 \usage{
 create_historic_forecast_dataset(
   data,
+  obs_column,
   days = c(7, 14),
   projection_variable = "median",
-  ci = 90,
-  obs_column
+  ci = 90
 )
 }
 \arguments{
 \item{data}{A data frame specif.}
+
+\item{obs_column}{A character string specifying the name of column for observed variable.}
 
 \item{days}{A vetor specifying which days to extract values for.}
 
 \item{projection_variable}{A character string specifies which projection variabe to extract. Example: "median" or "mean".}
 
 \item{ci}{A numeric value specifying the confidence interval.}
-
-\item{obs_column}{A character string specifying the name of column for observed variable.}
 }
 \value{
 Returns a data frame containing the EpiNow projections and observed values for only the specified days in the days argument.

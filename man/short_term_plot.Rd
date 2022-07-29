@@ -5,31 +5,27 @@
 \title{Accepts incoming data and creates plotly plots to show observed as data as bar plots and smoothed estimates as line plot along with future projections.}
 \usage{
 short_term_plot(
-  interval_num = 40,
   projections,
-  levels = c("historic", "forecast"),
   obs_data,
   obs_column,
   forecast_type,
-  start_date = first(as.Date(projections$date)),
   ylab,
   title,
   scale = FALSE,
+  interval_num = 40,
+  start_date = first(as.Date(projections$date)),
+  levels = c("historic", "forecast"),
   tick_period = "1 week",
   tick_labels_date = "\%b \%d",
   x_shift = 165,
   y_shift = 0,
-  annotation_text = "*Shaded area represents the 75\% credible region",
+  annotation_text = "<b>*Shaded area represents the 75\% credible region</b>",
   CrI = 75,
   CrIp = 25
 )
 }
 \arguments{
-\item{interval_num}{A numeric value denoting how many dates to show on x axis prior to the last date in data.}
-
 \item{projections}{A data frame that contains EpiNow projections.}
-
-\item{levels}{A vector that is used to create legend for historic data and projected data.}
 
 \item{obs_data}{A data frame that consists of observed historic data.}
 
@@ -37,13 +33,17 @@ short_term_plot(
 
 \item{forecast_type}{A character string specifying what type of EpiNow projections to plot. Acceptable values are reported_cases, R, infection, growth_rate.}
 
-\item{start_date}{A date value specifying what date to include as start date on x axis of the plot.}
-
 \item{ylab}{A character string specifying the label for y axis.}
 
 \item{title}{A character string specifying the title of the plot.}
 
 \item{scale}{A boolean value specifying whether to scale the plot}
+
+\item{interval_num}{A numeric value denoting how many dates to show on x axis prior to the last date in data.}
+
+\item{start_date}{A date value specifying what date to include as start date on x axis of the plot.}
+
+\item{levels}{A vector that is used to create legend for historic data and projected data.}
 
 \item{tick_period}{A character string specifying the intervals between two consecutive dates on x axis}
 

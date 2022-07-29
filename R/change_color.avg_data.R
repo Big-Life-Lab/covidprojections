@@ -2,6 +2,7 @@
 #'
 #' @param template A list from the observed_data.R function created using trace_presets variable to identify the trace plot getting added.
 #' @param color A hex value to set as the color.
+#' @param width A numeric value indicating the width of line plot.
 #' @return Sets color of the trace plot template added as argument to the function
 #' @importFrom dplyr "%>%"
 #' @import dplyr

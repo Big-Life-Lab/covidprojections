@@ -15,10 +15,10 @@
 #' @import stringr
 #' @export
 create_historic_forecast_dataset <- function(data,
+                                             obs_column,
                                              days = c(7, 14),
                                              projection_variable = "median",
-                                             ci = 90,
-                                             obs_column){
+                                             ci = 90){
 
   for (x in 1:length(data)){
     data[[x]] <- data[[x]] %>%

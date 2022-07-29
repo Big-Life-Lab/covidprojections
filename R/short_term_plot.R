@@ -29,21 +29,21 @@
 #' @import purrr
 #' @import stringr
 #' @export
-short_term_plot <- function(interval_num=40,
-                            projections,
-                            levels = c("historic", "forecast"),
+short_term_plot <- function(projections,
                             obs_data,
                             obs_column,
                             forecast_type,
-                            start_date = first(as.Date(projections$date)),
                             ylab,
                             title,
                             scale = FALSE,
+                            interval_num=40,
+                            start_date = first(as.Date(projections$date)),
+                            levels = c("historic", "forecast"),
                             tick_period = "1 week",
                             tick_labels_date = "%b %d",
                             x_shift = 165,
                             y_shift = 0,
-                            annotation_text = "*Shaded area represents the 75% credible region",
+                            annotation_text = "<b>*Shaded area represents the 75% credible region</b>",
                             CrI = 75,
                             CrIp = 25
 
@@ -163,11 +163,11 @@ short_term_plot <- function(interval_num=40,
   if(forecast_type != as.character("R") &
      forecast_type != as.character("growth_rate")){
     plot <- plot + annotate("text",  x = min(obs_plot$date) + x_shift, y  = max_val_y - y_shift, hjust = 1.1, vjust = 2,
-                            label = "<b>*Shaded area represents the 90% credible region</b>")
+                            label = annotation_text)
   }else{
     max_predict <- max(projections$median, na.rm = TRUE)
     plot <- plot + annotate("text",  x = min(obs_plot$date) + x_shift, y  = max_y_lim - y_shift, hjust = 1.1, vjust = 5,
-                            label = "<b>*Shaded area represents the 90% credible region</b>")
+                            label = annotation_text)
 
   }
 

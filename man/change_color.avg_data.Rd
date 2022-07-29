@@ -10,6 +10,8 @@
 \item{template}{A list from the observed_data.R function created using trace_presets variable to identify the trace plot getting added.}
 
 \item{color}{A hex value to set as the color.}
+
+\item{width}{A numeric value indicating the width of line plot.}
 }
 \value{
 Sets color of the trace plot template added as argument to the function
