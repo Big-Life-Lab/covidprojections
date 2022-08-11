@@ -110,7 +110,9 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
   # The training data in each iteration is incremented by one day to generate the next rolling forecast.
   x <- 0
   while(end_date <= project_until){
+    print("Printing Current X")
     x <- x + 1
+    print(x)
     cases_forecast <- short_term_forecast(
       data = covid_data,
       input = input_data,
@@ -123,7 +125,7 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
       reporting_delay = reporting_delay,
       output = "projections"
     )
-
+    print("Printing current data forecast")
 
     cases_data <- covid_data %>%
       mutate(date = as.Date(date)) %>%
@@ -135,6 +137,7 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
 
     start_date <- start_date + 7
     end_date <- end_date + 7
+    print(current_data_forecast[[x]])
   }
 
   # All the rolling forecasts are stored in the list cases_data_forecast which is saved to RData file.
@@ -144,18 +147,26 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
   cases_data_forecast_cases = list()
 
   for (i in 1:length(cases_data_forecast)){
-    cases_data_forecast_cases[[i]] <- cases_data_forecast[[i]] %>% filter(!is.na(variable), variable == "reported_cases",
-                                                                          type == 'forecast')
+    print("Current data forecast current iteration")
+    print(current_data_forecast[[i]])
+    cases_data_forecast_cases[[i]] <- cases_data_forecast[[i]] %>% filter(!is.na(variable), variable == "reported_cases", type == 'forecast')
+
+    print("current data forecast for cases")
+    print(current_data_forecast_cases[[i]])
   }
 
   # List below only saves the two week rolling forecast for growth rate by iterating through for loop
   cases_data_forecast_grate = list()
 
   for (i in 1:length(cases_data_forecast)){
+    print("Current data forecast current iteration")
+    print(current_data_forecast[[i]])
     cases_data_forecast_grate[[i]] <- cases_data_forecast[[i]] %>% filter(!is.na(variable), variable == "growth_rate",
                                                                           type == 'forecast') %>%
 
       rename_with(~paste0(.,paste0("_grate")), .cols=-c("date", "observed_new_cases"))
+    print("current data forecast for growth rate")
+    print(current_data_forecast_cases[[i]])
   }
 
 
