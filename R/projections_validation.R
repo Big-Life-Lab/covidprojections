@@ -33,16 +33,19 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
   # the argument site below has been used to denote both the waste water site and also the column in Absenteeism we are projecting
   if (projecting == "ww"){
     # load data
+    print("Reading wastewater data")
     ww_data <-
       read.csv(dataset)
-
+    print("READ Wastewater data")
     if(site == "Ottawa WWTP"){
       ww_clean <- wastewater_prep(ww_data) %>%
         select(date, N1_N2_avg_clean) %>%
         mutate(date = as.Date(date))
     }else{
+      print("CLeaning data and below is cleaned data")
       ww_clean <- data_prep(data = ww_data,
                             sites = site, column = column)
+      print(ww_clean)
     }
   }else if (projecting == "cases"){
     if (site == "Ottawa WWTP"){
@@ -93,6 +96,8 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
   end_date = as.Date(enddate)
 
   if (projecting == "ww"){
+    print("YColumn")
+    print(y_col)
     input_data = y_col
   }else{
     input_data = "observed_new_cases"
