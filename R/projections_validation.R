@@ -96,11 +96,15 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
   end_date = as.Date(enddate)
 
   if (projecting == "ww"){
-    print("YColumn")
-    print(y_col)
-    input_data = y_col
-  }else{
-    input_data = "observed_new_cases"
+    input_data <- ww_clean
+  }else if (projecting == "cases"){
+    input_data <- covid_data
+  }
+
+  if (projecting == "cases"){
+    y_col = "observed_new_cases"
+  }else if (projecting == "ww"){
+    y_col = y_col
   }
 
   # Create an empty list to save the two week rolling projections
@@ -114,8 +118,8 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
     x <- x + 1
     print(x)
     cases_forecast <- short_term_forecast(
-      data = covid_data,
-      input = input_data,
+      data = input_data,
+      input = y_col,
       start_date = start_date,
       end_date = end_date,
       input_multiplier = input_multiplier,
