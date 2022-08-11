@@ -131,7 +131,7 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
     )
     print("Printing current data forecast")
 
-    cases_data <- covid_data %>%
+    cases_data <- input_data %>%
       mutate(date = as.Date(date)) %>%
       select(date, `input_data`)
     cases_data[,input_data] = cases_data[,input_data]*input_multiplier
