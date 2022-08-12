@@ -134,7 +134,7 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
     cases_data <- input_data %>%
       mutate(date = as.Date(date)) %>%
       select(date, `y_col`)
-    cases_data[,input_data] = cases_data[,input_data]*input_multiplier
+    cases_data[,y_col] = cases_data[,y_col]*input_multiplier
     cases_data_forecast[[x]] <- cases_data %>%
       full_join(cases_forecast) %>%
       arrange(date)
