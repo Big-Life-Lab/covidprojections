@@ -168,7 +168,7 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
     cases_data_forecast_grate[[i]] <- cases_data_forecast[[i]] %>% filter(!is.na(variable), variable == "growth_rate",
                                                                           type == 'forecast') %>%
 
-      rename_with(~paste0(.,paste0("_grate")), .cols=-c("date", "observed_new_cases"))
+      rename_with(~paste0(.,paste0("_grate")), .cols=-c("date", `y_col`))
     print("current data forecast for growth rate")
     print(current_data_forecast_cases[[i]])
   }
@@ -180,7 +180,7 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
 
   for (i in 1:length(cases_data_forecast_cases)){
 
-    cases_data_final[[i]] <- cases_data_forecast_cases[[i]] %>% inner_join(cases_data_forecast_grate[[i]], by = c("date", "observed_new_cases"))
+    cases_data_final[[i]] <- cases_data_forecast_cases[[i]] %>% inner_join(cases_data_forecast_grate[[i]], by = c("date", `y_col`))
   }
 
   #cases_data_final is saved to RData file (contains reported cases and growth rate forecast values only)
@@ -192,7 +192,7 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
                                      days = 7,
                                      projection_variable = "median",
                                      ci = 90,
-                                     obs_column = "observed_new_cases")
+                                     obs_column = y_col)
 
   # Save 7th day forecast of reported cases to RData file
 
@@ -202,7 +202,7 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
                                      days = 7,
                                      projection_variable = c("median", "median_grate"),
                                      ci = 90,
-                                     obs_column = "observed_new_cases")
+                                     obs_column = y_col)
 
   # Save 7th day forecast of growth rate to RData file
 
@@ -213,7 +213,7 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
                                      days = 14,
                                      projection_variable = "median",
                                      ci = 90,
-                                     obs_column = "observed_new_cases")
+                                     obs_column = y_col)
 
   # Save 14th day forecast of reported cases to RData file
 
@@ -224,7 +224,7 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
                                      days = 14,
                                      projection_variable = c("median", "median_grate"),
                                      ci = 90,
-                                     obs_column = "observed_new_cases")
+                                     obs_column = y_col)
 
   # Save 14th day forecast of growth rate to RData file
   return(list(cases_data_forecast, cases_data_final, cases_data_forecast_7_day_fig5, cases_data_forecast_7_day_fig7, cases_data_forecast_14_day_fig5, cases_data_forecast_14_day_fig7))
