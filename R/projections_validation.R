@@ -141,7 +141,7 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
 
     start_date <- start_date + 7
     end_date <- end_date + 7
-    print(current_data_forecast[[x]])
+    #print(current_data_forecast[[x]])
   }
 
   # All the rolling forecasts are stored in the list cases_data_forecast which is saved to RData file.
@@ -152,11 +152,11 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
 
   for (i in 1:length(cases_data_forecast)){
     print("Current data forecast current iteration")
-    print(current_data_forecast[[i]])
+    #print(current_data_forecast[[i]])
     cases_data_forecast_cases[[i]] <- cases_data_forecast[[i]] %>% filter(!is.na(variable), variable == "reported_cases", type == 'forecast')
 
     print("current data forecast for cases")
-    print(current_data_forecast_cases[[i]])
+    #print(current_data_forecast_cases[[i]])
   }
 
   # List below only saves the two week rolling forecast for growth rate by iterating through for loop
@@ -170,7 +170,7 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
 
       rename_with(~paste0(.,paste0("_grate")), .cols=-c("date", `y_col`))
     print("current data forecast for growth rate")
-    print(current_data_forecast_cases[[i]])
+    #print(current_data_forecast_cases[[i]])
   }
 
 
