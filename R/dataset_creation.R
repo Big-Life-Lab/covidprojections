@@ -30,6 +30,9 @@ dataset_creation <- function(dataset = "C:/Users/saran/OneDrive/Documents/WasteW
   signal_col <- "rgb(226, 127, 88)"
   rolling_avg_col <- "rgb(226, 127, 88)"
   incoming_data <- read.csv(dataset)
+
+  print("INCOMING DATA")
+  print(incoming_data)
   if(site == "Ottawa WWTP"){
     name <- "Daily viral signal in Ottawa"
     cleaned_data <- wastewater_prep(incoming_data) %>%
