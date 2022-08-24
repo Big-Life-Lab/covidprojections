@@ -31,8 +31,6 @@ dataset_creation <- function(dataset = "C:/Users/saran/OneDrive/Documents/WasteW
   rolling_avg_col <- "rgb(226, 127, 88)"
   incoming_data <- read.csv(dataset)
 
-  print("INCOMING DATA")
-  print(incoming_data)
   if(site == "Ottawa WWTP"){
     name <- "Daily viral signal in Ottawa"
     cleaned_data <- wastewater_prep(incoming_data) %>%
@@ -50,7 +48,6 @@ dataset_creation <- function(dataset = "C:/Users/saran/OneDrive/Documents/WasteW
       arrange(date) #arrange date column
   }
   else {
-      print("NOT OTTAWA")
       y_col <- y_col
       split_site <- strsplit(site, " ")
       name <- paste("Daily viral signal in ", split_site[[1]][[1]])
@@ -58,8 +55,7 @@ dataset_creation <- function(dataset = "C:/Users/saran/OneDrive/Documents/WasteW
                                 sites = site, column = column)
     }
 
-  print("CLEANED DATA")
-  print(cleaned_data)
+
 
   daily_viral_signal_call <- list(type = "observed_data", y_column = y_col,
                                   name = `name`, short_name = "Daily signal",
@@ -86,16 +82,14 @@ dataset_creation <- function(dataset = "C:/Users/saran/OneDrive/Documents/WasteW
                              color = signal_col, yaxis = "y2", opacity = 0.5)
 
   if(exists("cleaned_march_data") && is.data.frame(get('cleaned_march_data'))){
-    print("FINAL CLEANED MARCH DAATA")
-    print(cleaned_march_data)
+
     plotting_data_list <- list("cleaned_data" = cleaned_data, "cleaned_march_data"= cleaned_march_data,
                                "waste_roc" = waste_roc,
                                "y_col" = y_col, "daily_viral_signal_call" = daily_viral_signal_call,
                                "pct_5_fold" = pct_5_fold, "daily_roc_call_log_mag" = daily_roc_call_log_mag,
                                "daily_roc_call_log_pct" = daily_roc_call_log_pct, "daily_roc_call_pct" = daily_roc_call_pct)
   }else{
-    print("FINAL CLEANED DATA")
-    print(cleaned_data)
+
     plotting_data_list <- list("cleaned_data" = cleaned_data, "waste_roc" = waste_roc,
                                "y_col" = y_col, "daily_viral_signal_call" = daily_viral_signal_call,
                                "pct_5_fold" = pct_5_fold, "daily_roc_call_log_mag" = daily_roc_call_log_mag,
