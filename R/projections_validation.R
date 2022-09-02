@@ -33,19 +33,15 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
   # the argument site below has been used to denote both the waste water site and also the column in Absenteeism we are projecting
   if (projecting == "ww"){
     # load data
-    print("Reading wastewater data")
     ww_data <-
       read.csv(dataset)
-    print("READ Wastewater data")
     if(site == "Ottawa WWTP"){
       ww_clean <- wastewater_prep(ww_data) %>%
         select(date, N1_N2_avg_clean) %>%
         mutate(date = as.Date(date))
     }else{
-      print("CLeaning data and below is cleaned data")
       ww_clean <- data_prep(data = ww_data,
                             sites = site, column = column)
-      print(ww_clean)
     }
   }else if (projecting == "cases"){
     if (site == "Ottawa WWTP"){
@@ -114,9 +110,7 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
   # The training data in each iteration is incremented by one day to generate the next rolling forecast.
   x <- 0
   while(end_date <= project_until){
-    print("Printing Current X")
     x <- x + 1
-    print(x)
     cases_forecast <- short_term_forecast(
       data = input_data,
       input = y_col,
@@ -129,7 +123,6 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
       reporting_delay = reporting_delay,
       output = "projections"
     )
-    print("Printing current data forecast")
 
     cases_data <- input_data %>%
       mutate(date = as.Date(date)) %>%
@@ -151,23 +144,17 @@ projections_validation <- function(dataset = "https://raw.githubusercontent.com/
   cases_data_forecast_cases = list()
 
   for (i in 1:length(cases_data_forecast)){
-    print("Current data forecast current iteration")
-
     cases_data_forecast_cases[[i]] <- cases_data_forecast[[i]] %>% filter(!is.na(variable), variable == "reported_cases", type == 'forecast')
-
-    print("current data forecast for cases")
   }
 
   # List below only saves the two week rolling forecast for growth rate by iterating through for loop
   cases_data_forecast_grate = list()
 
   for (i in 1:length(cases_data_forecast)){
-    print("Current data forecast current iteration")
     cases_data_forecast_grate[[i]] <- cases_data_forecast[[i]] %>% filter(!is.na(variable), variable == "growth_rate",
                                                                           type == 'forecast') %>%
 
       rename_with(~paste0(.,paste0("_grate")), .cols=-c("date", `y_col`))
-    print("current data forecast for growth rate")
   }
 
 
