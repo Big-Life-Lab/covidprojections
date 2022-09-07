@@ -488,7 +488,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickvals = tickvals,
@@ -509,7 +509,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickformat = ticklabels),
@@ -531,7 +531,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickvals = tickvals,
@@ -551,7 +551,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickformat = ticklabels),
@@ -574,7 +574,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickvals = tickvals,
@@ -595,7 +595,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickformat = ticklabels),
@@ -617,7 +617,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickvals = tickvals,
@@ -637,7 +637,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickformat = ticklabels),
@@ -662,7 +662,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickvals = tickvals,
@@ -690,7 +690,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickformat = ticklabels),
@@ -719,7 +719,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickvals = tickvals,
@@ -745,7 +745,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickformat = ticklabels),
@@ -775,7 +775,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickvals = tickvals,
@@ -809,7 +809,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickformat = ticklabels),
@@ -844,7 +844,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickvals = tickvals,
@@ -877,7 +877,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickformat = ticklabels),
@@ -914,7 +914,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickvals = tickvals,
@@ -942,7 +942,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickformat = ticklabels),
@@ -971,7 +971,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickvals = tickvals,
@@ -998,7 +998,7 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = TRUE),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE),
                 xaxis = list(type = "date",
                              title = list(text = as.character(titles[["x"]])),
                              automargin = TRUE, tickformat = ticklabels),
