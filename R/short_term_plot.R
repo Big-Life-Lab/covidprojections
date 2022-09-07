@@ -183,7 +183,7 @@ short_term_plot <- function(projections,
       plot.title = element_text(hjust = 0.5)) +
     scale_color_manual(values = palette) +
     scale_fill_manual(values = palette) +
-    labs(y = paste0("<b", ylab, "/b>"), x = "<b>Date</b>", col = "Type", fill = "Type", title = title) +
+    labs(y = ylab, x = "<b>Date</b>", col = "Type", fill = "Type", title = title) +
     expand_limits(y = c(-0.4, 0.8)) +
     scale_x_date(expand = c(0,0), date_breaks = tick_period,
                  date_labels = tick_labels_date) +
@@ -208,9 +208,19 @@ short_term_plot <- function(projections,
 
   # Format legend layout & add annotation
   plot <- plotly::layout(plot,
-                         xaxis = list(
+                         xaxis = list(title = list(list(
+                           family = "Arial",
+                           size = 12
+                         )),
                            range = c(a,b)),
-                         legend = list(
+                         yaxis = list(title = list(list(
+                           family = "Arial",
+                           size = 12
+                         ))),
+                         legend = list(title = list(list(
+                           family = "Arial",
+                           size = 12
+                         )),
                            #orientation = "h",
                            x = 0.02, y = 1
                          ),
