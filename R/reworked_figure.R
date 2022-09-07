@@ -488,12 +488,12 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickvals = tickvals,
                              tickformat = "%b"),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE),
                 barmode =  "relative",
                 bargap = 0,
@@ -509,11 +509,11 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickformat = ticklabels),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE),
                 barmode =  "relative",
                 bargap = 0,
@@ -531,12 +531,12 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickvals = tickvals,
                              tickformat = "%b"),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE),
                 barmode =  "relative",
                 bargap = 0,
@@ -551,11 +551,11 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickformat = ticklabels),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE),
                 barmode =  "relative",
                 bargap = 0,
@@ -574,12 +574,12 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickvals = tickvals,
                              tickformat = "%b"),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE),
                 barmode =  "relative",
                 bargap = 0,
@@ -595,11 +595,11 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]),font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]),font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickformat = ticklabels),
-                yaxis = list(title = list(text = as.character(titles[["y"]]),font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]),font = list(family = "Arial", size = 20)),
                              automargin = TRUE),
                 barmode =  "relative",
                 bargap = 0,
@@ -617,12 +617,12 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickvals = tickvals,
                              tickformat = "%b"),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE),
                 barmode =  "relative",
                 bargap = 0,
@@ -637,11 +637,11 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickformat = ticklabels),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE),
                 barmode =  "relative",
                 bargap = 0,
@@ -662,12 +662,12 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickvals = tickvals,
                              tickformat = "%b"),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, overlaying = "y2",
                              zeroline = FALSE),
                 yaxis2 = list(
@@ -690,11 +690,11 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickformat = ticklabels),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, overlaying = "y2",
                              zeroline = FALSE),
                 yaxis2 = list(
@@ -719,12 +719,12 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickvals = tickvals,
                              tickformat = "%b"),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, overlaying = "y2",
                              zeroline = FALSE),
                 yaxis2 = list(
@@ -745,11 +745,11 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickformat = ticklabels),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, overlaying = "y2",
                              zeroline = FALSE),
                 yaxis2 = list(
@@ -775,12 +775,12 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickvals = tickvals,
                              tickformat = "%b"),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, overlaying = "y2",
                              zeroline = FALSE),
                 yaxis2 = list(
@@ -809,11 +809,11 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickformat = ticklabels),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, overlaying = "y2",
                              zeroline = FALSE),
                 yaxis2 = list(
@@ -844,12 +844,12 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickvals = tickvals,
                              tickformat = "%b"),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, overlaying = "y2",
                              zeroline = FALSE),
                 yaxis2 = list(
@@ -877,11 +877,11 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickformat = ticklabels),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, overlaying = "y2",
                              zeroline = FALSE),
                 yaxis2 = list(
@@ -914,12 +914,12 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickvals = tickvals,
                              tickformat = "%b"),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, overlaying = "y2",
                              zeroline = FALSE),
                 yaxis2 = list(
@@ -942,11 +942,11 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickformat = ticklabels),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, overlaying = "y2",
                              zeroline = FALSE),
                 yaxis2 = list(
@@ -971,12 +971,12 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickvals = tickvals,
                              tickformat = "%b"),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, overlaying = "y2",
                              zeroline = FALSE),
                 yaxis2 = list(
@@ -998,11 +998,11 @@ reworked_figure <-
             p <-
               layout(
                 p,
-                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 10)),
+                title = list(text = titles[["title"]], x = 0.5, autosize = FALSE, font = list(family = "Arial", size = 18)),
                 xaxis = list(type = "date",
-                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 10)),
+                             title = list(text = as.character(titles[["x"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, tickformat = ticklabels),
-                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 10)),
+                yaxis = list(title = list(text = as.character(titles[["y"]]), font = list(family = "Arial", size = 20)),
                              automargin = TRUE, overlaying = "y2",
                              zeroline = FALSE),
                 yaxis2 = list(
@@ -1034,10 +1034,10 @@ reworked_figure <-
       b <- as.Date(last(data$date))
       p <- layout(p, xaxis = list(range = c(a, b)))
     }
-    p <- p %>% layout(title = list(font = list(family = "Arial", size = 10)),
-                      xaxis = list(font = list(family = "Arial", size = 10)),
-                      yaxis = list(font = list(family = "Arial", size = 10)),
-                      legend = list(font = list(family = "Arial", size = 10)))
+    p <- p %>% layout(title = list(font = list(family = "Arial", size = 18)),
+                      xaxis = list(font = list(family = "Arial", size = 20)),
+                      yaxis = list(font = list(family = "Arial", size = 20)),
+                      legend = list(font = list(family = "Arial", size = 20)))
     return(p)
 
   }
