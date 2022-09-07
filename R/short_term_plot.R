@@ -163,18 +163,18 @@ short_term_plot <- function(projections,
   if(forecast_type != as.character("R") &
      forecast_type != as.character("growth_rate")){
     plot <- plot + annotate("text",  x = min(obs_plot$date) + x_shift, y  = max_val_y - y_shift, hjust = 1.1, vjust = 2,
-                            label = annotation_text, size = 2)
+                            label = annotation_text, size = 4)
   }else{
     max_predict <- max(projections$median, na.rm = TRUE)
     plot <- plot + annotate("text",  x = min(obs_plot$date) + x_shift, y  = max_y_lim - y_shift, hjust = 1.1, vjust = 5,
-                            label = annotation_text, size = 2)
+                            label = annotation_text, size = 4)
 
   }
 
   # add plot theming
   plot <- plot +
     theme(
-      text = element_text(size = 12, family = "Arial"),
+      text = element_text(size = 10, family = "Arial"),
       panel.background = element_blank(),
       panel.grid.major.y = element_line(colour = "grey"),
       axis.line.x = element_line(colour = "grey"),
@@ -209,19 +209,19 @@ short_term_plot <- function(projections,
   # Format legend layout & add annotation
   plot <- plotly::layout(plot,
                          title = list(title = list(family = "Arial",
-                                                   size = 9)),
+                                                   size = 10)),
                          xaxis = list(title = list(list(
                            family = "Arial",
-                           size = 9
+                           size = 10
                          )),
                            range = c(a,b)),
                          yaxis = list(title = list(list(
                            family = "Arial",
-                           size = 12
+                           size = 10
                          ))),
                          legend = list(title = list(list(
                            family = "Arial",
-                           size = 12
+                           size = 10
                          )),
                            #orientation = "h",
                            x = 0.02, y = 1
