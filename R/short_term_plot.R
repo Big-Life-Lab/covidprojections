@@ -163,11 +163,11 @@ short_term_plot <- function(projections,
   if(forecast_type != as.character("R") &
      forecast_type != as.character("growth_rate")){
     plot <- plot + annotate("text",  x = min(obs_plot$date) + x_shift, y  = max_val_y - y_shift, hjust = 1.1, vjust = 2,
-                            label = annotation_text, size = 10)
+                            label = annotation_text, size = 2)
   }else{
     max_predict <- max(projections$median, na.rm = TRUE)
     plot <- plot + annotate("text",  x = min(obs_plot$date) + x_shift, y  = max_y_lim - y_shift, hjust = 1.1, vjust = 5,
-                            label = annotation_text, size = 10)
+                            label = annotation_text, size = 2)
 
   }
 
@@ -209,10 +209,10 @@ short_term_plot <- function(projections,
   # Format legend layout & add annotation
   plot <- plotly::layout(plot,
                          title = list(title = list(family = "Arial",
-                                                   size = 12)),
+                                                   size = 9)),
                          xaxis = list(title = list(list(
                            family = "Arial",
-                           size = 12
+                           size = 9
                          )),
                            range = c(a,b)),
                          yaxis = list(title = list(list(
