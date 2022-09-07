@@ -174,7 +174,7 @@ short_term_plot <- function(projections,
   # add plot theming
   plot <- plot +
     theme(
-      text = element_text(size = 12, family = "Arial"),
+      text = element_text(size = 9, family = "Arial"),
       panel.background = element_blank(),
       panel.grid.major.y = element_line(colour = "grey"),
       axis.line.x = element_line(colour = "grey"),
@@ -210,16 +210,16 @@ short_term_plot <- function(projections,
   plot <- plotly::layout(plot,
                          xaxis = list(title = list(list(
                            family = "Arial",
-                           size = 12
+                           size = 9
                          )),
                            range = c(a,b)),
                          yaxis = list(title = list(list(
                            family = "Arial",
-                           size = 12
+                           size = 9
                          ))),
                          legend = list(title = list(list(
                            family = "Arial",
-                           size = 12
+                           size = 9
                          )),
                            #orientation = "h",
                            x = 0.02, y = 1
