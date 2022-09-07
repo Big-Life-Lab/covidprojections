@@ -1034,10 +1034,10 @@ reworked_figure <-
       b <- as.Date(last(data$date))
       p <- layout(p, xaxis = list(range = c(a, b)))
     }
-    p <- p %>% layout(title = list(font = list(family = "Arial"), size = 12),
-                      xaxis = list(font = list(family = "Arial"), size = 12),
-                      yaxis = list(font = list(family = "Arial"), size = 12),
-                      legend = list(font = list(family = "Arial"), size = 12))
+    p <- p %>% layout(title = list(font = list(family = "Arial", size = 12)),
+                      xaxis = list(font = list(family = "Arial", size = 12)),
+                      yaxis = list(font = list(family = "Arial", size = 12)),
+                      legend = list(font = list(family = "Arial", size = 12)))
     return(p)
 
   }
