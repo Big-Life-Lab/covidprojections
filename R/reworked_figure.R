@@ -798,7 +798,7 @@ reworked_figure <-
                 annotations = list(
                   x = 1.26, y = 0.95, text = y2_button_name,
                   showarrow = F, xref='paper', yref='paper',
-                  font=list(size=15)
+                  font=list(size=12)
                 ),
                 legend = list(x = 0.05, y = 0.9),
                 updatemenus = updated_y2,
@@ -831,7 +831,7 @@ reworked_figure <-
                 annotations = list(
                   x = 1.26, y = 0.95, text = y2_button_name,
                   showarrow = F, xref='paper', yref='paper',
-                  font=list(size=15)
+                  font=list(size=12)
                 ),
                 legend = list(x = 0.05, y = 0.9),
                 updatemenus = updated_y2,
@@ -867,7 +867,7 @@ reworked_figure <-
                 annotations = list(
                   x = 1.26, y = 0.95, text = y2_button_name,
                   showarrow = F, xref='paper', yref='paper',
-                  font=list(size=15)
+                  font=list(size=12)
                 ),
                 legend = list(x = 0.05, y = 0.9),
                 updatemenus = updated_y2
@@ -899,7 +899,7 @@ reworked_figure <-
                 annotations = list(
                   x = 1.26, y = 0.95, text = y2_button_name,
                   showarrow = F, xref='paper', yref='paper',
-                  font=list(size=15)
+                  font=list(size=12)
                 ),
                 legend = list(x = 0.05, y = 0.9),
                 updatemenus = updated_y2
@@ -1034,7 +1034,10 @@ reworked_figure <-
       b <- as.Date(last(data$date))
       p <- layout(p, xaxis = list(range = c(a, b)))
     }
-    p <- p %>% layout(font = list(family = "Arial"))
+    p <- p %>% layout(title = list(font = list(family = "Arial"), size = 12),
+                      xaxis = list(font = list(family = "Arial"), size = 12),
+                      yaxis = list(font = list(family = "Arial"), size = 12),
+                      legend = list(font = list(family = "Arial"), size = 12))
     return(p)
 
   }
