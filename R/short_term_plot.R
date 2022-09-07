@@ -174,6 +174,7 @@ short_term_plot <- function(projections,
   # add plot theming
   plot <- plot +
     theme(
+      text = element_text(family = "Arial"),
       panel.background = element_blank(),
       panel.grid.major.y = element_line(colour = "grey"),
       axis.line.x = element_line(colour = "grey"),

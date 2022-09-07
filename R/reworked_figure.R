@@ -1034,6 +1034,7 @@ reworked_figure <-
       b <- as.Date(last(data$date))
       p <- layout(p, xaxis = list(range = c(a, b)))
     }
+    p <- p %>% layout(font = list(family = "Arial"))
     return(p)
 
   }
