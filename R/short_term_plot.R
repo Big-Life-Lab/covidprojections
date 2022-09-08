@@ -174,7 +174,7 @@ short_term_plot <- function(projections,
   # add plot theming
   plot <- plot +
     theme(
-      text = element_text(size = 10, family = "cursive"),
+      text = element_text(size = 10, family = "Arial"),
       panel.background = element_blank(),
       panel.grid.major.y = element_line(colour = "grey"),
       axis.line.x = element_line(colour = "grey"),
@@ -208,7 +208,7 @@ short_term_plot <- function(projections,
 
   # Format legend layout & add annotation
   plot <- plotly::layout(plot,
-                         title = list(title = list(family = "cursive",
+                         title = list(title = list(family = "Arial",
                                                    size = 10)),
                          xaxis = list(title = list(list(
                            family = "Arial",
