@@ -35,7 +35,7 @@ normalization_fig1(
 \item{margin_subplot}{A numeric value specifying the distance between each subplot for different sites.}
 }
 \value{
-A plotly plot showing missingness of data in the variables for the variables mN1, mN2, and mE viral signal in wastewater for different sites in subplots.
+A list containing plotly plot showing missingness of data in the variables for the variables mN1, mN2, and mE viral signal in wastewater for different sites in subplots and the combined data with all labs.
 }
 \description{
 Accepts incoming data and creates plotly plots to show the missingness of data in the variables for mN1, mN2, and mE genes viral signal in the Ontario data for different sites.

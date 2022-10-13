@@ -95,6 +95,7 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
 
 
 
+  output_list <- list("Plot" = CombinePlot, "Data" = grouped_df_new)
 
-  return(CombinePlot)
+  return(output_list)
 }
