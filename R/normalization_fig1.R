@@ -4,7 +4,7 @@
 #' @param arrow_x_end A vector of date values to specify where to add an arrow to show the date breaks on the plot.
 #' @param text_display A vector the same dates as in arrow_x_end vector in form of character values to add as text to the plot.
 #' @param figwidth A numeric value specifying the width of the plot.
-#' @param figheight A numeric value specifying the height of the plot. 
+#' @param figheight A numeric value specifying the height of the plot.
 #' @param margin_subplot A numeric value specifying the distance between each subplot for different sites.
 #' @return A plotly plot showing missingness of data in the variables for the variables mN1, mN2, and mE viral signal in wastewater for different sites in subplots.
 #' @importFrom dplyr "%>%"
@@ -32,7 +32,7 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
   datalist = list()
   # or pre-allocate for slightly more efficiency
   datalist = vector("list", length = n)
-  
+
   for (i in 1:n) {
     # ... make some data
     dat <- read.csv(data[[i]])
@@ -41,10 +41,10 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
   }
 
   big_data = do.call(rbind, datalist)
-  grouped_df <- big_data[with(combine_data, order(sys_PHU_region, sys_PHU, sampleDate)),]
-  
+  grouped_df <- big_data[with(big_data, order(sys_PHU_region, sys_PHU, sampleDate)),]
+
   grouped_df_new <- grouped_df[,c(1,78,2:77,79:83)]
-  
+
   grouped_df_new$present <- 0
   for (i in 1:nrow(grouped_df_new)){
     if (!is.na(grouped_df_new[[i, "mN1"]]) | !is.na(grouped_df_new[[i, "mN2"]]) | !is.na(grouped_df_new[[i, "mE"]])){
@@ -53,11 +53,11 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
       grouped_df_new[[i, "present"]] <- 0.2
     }
   }
-  
+
   grouped_df_new[['sampleDate']] <- as.Date(grouped_df_new[['sampleDate']])
-  
+
   grouped_df_new$mN1Present<-factor(ifelse(grouped_df_new$present<1,"Absent","Present"))
-  
+
   site_names <- unique(grouped_df_new$sys_siteID)
   mylist <- lapply(site_names, function(x) {
     site <- site_names[[1]]
@@ -67,8 +67,8 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
         ) %>%
         layout(barmode = 'stack',
                title = "Presence of mN1/ mN2/ mE viral signal in wastewater across different sites in Ontario across time",
-               xaxis = list(title = "Date"), 
-               yaxis = list(title = x, range = list(0,1.5)), showlegend = TRUE) %>%   
+               xaxis = list(title = "Date"),
+               yaxis = list(title = x, range = list(0,1.5)), showlegend = TRUE) %>%
         add_annotations(x = ~arrow_x_end,
                         y = ~1,
                         text = ~text_display,
@@ -78,9 +78,9 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
       Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$sys_siteID == x,]) %>%
         add_trace(x = ~sampleDate, y = ~present, type = 'bar', color = ~mN1Present, showlegend = FALSE
         ) %>%
-        layout(barmode = 'stack', 
-               xaxis = list(title = "Date"), 
-               yaxis = list(title = x, range = list(0,1.5)), showlegend = FALSE) %>%   
+        layout(barmode = 'stack',
+               xaxis = list(title = "Date"),
+               yaxis = list(title = x, range = list(0,1.5)), showlegend = FALSE) %>%
         add_annotations(x = ~arrow_x_end,
                         y = ~1,
                         text = ~text_display,
@@ -90,11 +90,11 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
   })
 
   n_row <- length(site_names)
-  CombinePlot <- subplot(mylist, 
+  CombinePlot <- subplot(mylist,
                          nrows=n_row, shareX = TRUE, shareY = FALSE, titleY = TRUE, margin = margin_subplot) %>% layout(width = figwidth, height = figheight, showlegend = TRUE)
-  
-  
-  
-  
+
+
+
+
   return(CombinePlot)
 }
