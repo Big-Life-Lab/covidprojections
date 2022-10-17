@@ -6,7 +6,7 @@
 #' @param figwidth A numeric value specifying the width of the plot.
 #' @param figheight A numeric value specifying the height of the plot.
 #' @param margin_subplot A numeric value specifying the distance between each subplot for different sites.
-#' @return A plotly plot showing missingness of data in the variables for the variables mN1, mN2, and mE viral signal in wastewater for different sites in subplots.
+#' @return A list containing plotly plot showing missingness of data in the variables for the variables mN1, mN2, and mE viral signal in wastewater for different sites in subplots and the combined data with all labs.
 #' @importFrom dplyr "%>%"
 #' @import dplyr
 #' @import lubridate
@@ -58,11 +58,11 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
 
   grouped_df_new$mN1Present<-factor(ifelse(grouped_df_new$present<1,"Absent","Present"))
 
-  site_names <- unique(grouped_df_new$sys_siteID)
+  site_names <- unique(grouped_df_new$siteID)
   mylist <- lapply(site_names, function(x) {
     site <- site_names[[1]]
     if (x == site){
-      Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$sys_siteID == x,]) %>%
+      Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$siteID == x,]) %>%
         add_trace(x = ~sampleDate, y = ~present, type = 'bar', color = ~mN1Present, showlegend = TRUE
         ) %>%
         layout(barmode = 'stack',
@@ -75,7 +75,7 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
                         showarrow = TRUE,
                         font = list(size = 16))
     }else{
-      Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$sys_siteID == x,]) %>%
+      Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$siteID == x,]) %>%
         add_trace(x = ~sampleDate, y = ~present, type = 'bar', color = ~mN1Present, showlegend = FALSE
         ) %>%
         layout(barmode = 'stack',
