@@ -58,6 +58,12 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
 
   grouped_df_new$mN1Present<-factor(ifelse(grouped_df_new$present<1,"Absent","Present"))
 
+  t1 <- list(
+    family = "Times New Roman",
+    size = 14,
+    color = "black"
+  )
+
   site_names <- unique(grouped_df_new$siteID)
   mylist <- lapply(site_names, function(x) {
     site <- site_names[[1]]
@@ -68,7 +74,7 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
         layout(barmode = 'stack',
                title = "Presence of mN1/ mN2/ mE viral signal in wastewater across different sites in Ontario across time",
                xaxis = list(title = "Date"),
-               yaxis = list(title = x, range = list(0,1.5)), showlegend = TRUE) %>%
+               yaxis = list(title = list(text = bquote(x), font = t1), range = list(0,1.5)), showlegend = TRUE) %>%
         add_annotations(x = ~arrow_x_end,
                         y = ~1,
                         text = ~text_display,
@@ -80,7 +86,7 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
         ) %>%
         layout(barmode = 'stack',
                xaxis = list(title = "Date"),
-               yaxis = list(title = x, range = list(0,1.5)), showlegend = FALSE) %>%
+               yaxis = list(title = list(text =bquote(x), font = t1), range = list(0,1.5)), showlegend = FALSE) %>%
         add_annotations(x = ~arrow_x_end,
                         y = ~1,
                         text = ~text_display,
