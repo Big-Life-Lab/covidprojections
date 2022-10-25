@@ -18,7 +18,7 @@
 #' @import purrr
 #' @import stringr
 #' @export
-normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_Extended_Aggregated_Data_MR.csv",
+normalization_figs <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_Extended_Aggregated_Data_MR.csv",
                                        "../../Data/Observed_data/Ottawa_WWTP_Extended_Aggregated_Data_rev_MR.csv",
                                        "../../Data/Observed_data/Ryerson_WWTP_Extended_Aggregated_Data_VP.csv",
                                        "../../Data/Observed_data/Toronto_WWTP_Extended_Aggregated_Data_MR.csv",
@@ -27,7 +27,7 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
                                                 as.Date("2021-07-09"), as.Date("2021-10-07"), as.Date("2022-01-05"), as.Date("2022-04-05"), as.Date("2022-07-04"),as.Date("2022-09-22")),
                                text_display = c("2020-07-14", "2020-10-12", "2021-01-10", "2021-04-10", "2021-07-09", "2021-10-07", "2022-01-05", "2022-04-05", "2022-07-04", "2022-09-22"),
                                figwidth = 1500, figheight = 8500, margin_subplot = 0.005
-                               ){
+){
   n = length(data)
   datalist = list()
   # or pre-allocate for slightly more efficiency
@@ -74,7 +74,7 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
         layout(barmode = 'stack',
                title = "Presence of mN1/ mN2/ mE viral signal in wastewater across different sites in Ontario across time",
                xaxis = list(title = "Date"),
-               yaxis = list(title = bquote(x), range = list(0,1.5)), showlegend = TRUE) %>%
+               yaxis = list(title = paste0("<b>",x,"</b>"), range = list(0,1.5)), showlegend = TRUE) %>%
         add_annotations(x = ~arrow_x_end,
                         y = ~1,
                         text = ~text_display,
@@ -86,7 +86,7 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
         ) %>%
         layout(barmode = 'stack',
                xaxis = list(title = "Date"),
-               yaxis = list(title = bquote(x), range = list(0,1.5)), showlegend = FALSE) %>%
+               yaxis = list(title = paste0("<b>",x,"</b>"), range = list(0,1.5)), showlegend = FALSE) %>%
         add_annotations(x = ~arrow_x_end,
                         y = ~1,
                         text = ~text_display,
