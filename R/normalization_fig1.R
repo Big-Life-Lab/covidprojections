@@ -18,7 +18,7 @@
 #' @import purrr
 #' @import stringr
 #' @export
-normalization_figs <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_Extended_Aggregated_Data_MR.csv",
+normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_Extended_Aggregated_Data_MR.csv",
                                        "../../Data/Observed_data/Ottawa_WWTP_Extended_Aggregated_Data_rev_MR.csv",
                                        "../../Data/Observed_data/Ryerson_WWTP_Extended_Aggregated_Data_VP.csv",
                                        "../../Data/Observed_data/Toronto_WWTP_Extended_Aggregated_Data_MR.csv",
