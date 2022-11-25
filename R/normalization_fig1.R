@@ -64,11 +64,11 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
     color = "black"
   )
 
-  site_names <- unique(grouped_df_new$siteID)
+  site_names <- unique(grouped_df_new$sys_siteID)
   mylist <- lapply(site_names, function(x) {
     site <- site_names[[1]]
     if (x == site){
-      Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$siteID == x,]) %>%
+      Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$sys_siteID == x,]) %>%
         add_trace(x = ~sampleDate, y = ~present, type = 'bar', color = ~mN1Present, showlegend = TRUE
         ) %>%
         layout(barmode = 'stack',
@@ -81,7 +81,7 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
                         showarrow = TRUE,
                         font = list(size = 16))
     }else{
-      Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$siteID == x,]) %>%
+      Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$sys_siteID == x,]) %>%
         add_trace(x = ~sampleDate, y = ~present, type = 'bar', color = ~mN1Present, showlegend = FALSE
         ) %>%
         layout(barmode = 'stack',
