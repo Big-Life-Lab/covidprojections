@@ -74,7 +74,7 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
       }else{
         ylabel = x
       }
-      Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$sys_siteID == x,]) %>%
+      Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$sys_siteDesc == x,]) %>%
         add_trace(x = ~sampleDate, y = ~present, type = 'bar', color = ~mN1Present, showlegend = TRUE
         ) %>%
         layout(barmode = 'stack',
@@ -93,7 +93,7 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
       }else{
         ylabel = x
       }
-      Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$sys_siteID == x,]) %>%
+      Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$sys_siteDesc == x,]) %>%
         add_trace(x = ~sampleDate, y = ~present, type = 'bar', color = ~mN1Present, showlegend = FALSE
         ) %>%
         layout(barmode = 'stack',
