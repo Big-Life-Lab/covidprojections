@@ -64,29 +64,41 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
     color = "black"
   )
 
-  site_names <- unique(grouped_df_new$sys_siteID)
+  site_names <- unique(grouped_df_new$sys_siteDesc)
   mylist <- lapply(site_names, function(x) {
     site <- site_names[[1]]
     if (x == site){
+      if (stri_sub(x, -4) %in% c("WWTP", "WPCP", "PCP")){
+        len = nchar(x)
+        ylabel = substr(x, 1, len-4)
+      }else{
+        ylabel = x
+      }
       Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$sys_siteID == x,]) %>%
         add_trace(x = ~sampleDate, y = ~present, type = 'bar', color = ~mN1Present, showlegend = TRUE
         ) %>%
         layout(barmode = 'stack',
                title = "Presence of mN1/ mN2/ mE viral signal in wastewater across different sites in Ontario across time",
                xaxis = list(title = "Date"),
-               yaxis = list(title = paste0("<b>",x,"</b>"), range = list(0,1.5)), showlegend = TRUE) %>%
+               yaxis = list(title = paste0("<b>",ylabel,"</b>"), range = list(0,1.5)), showlegend = TRUE) %>%
         add_annotations(x = ~arrow_x_end,
                         y = ~1,
                         text = ~text_display,
                         showarrow = TRUE,
                         font = list(size = 16))
     }else{
+      if (stri_sub(x, -4) %in% c("WWTP", "WPCP", "PCP")){
+        len = nchar(x)
+        ylabel = substr(x, 1, len-4)
+      }else{
+        ylabel = x
+      }
       Y_Chart <- plot_ly(data= grouped_df_new[grouped_df_new$sys_siteID == x,]) %>%
         add_trace(x = ~sampleDate, y = ~present, type = 'bar', color = ~mN1Present, showlegend = FALSE
         ) %>%
         layout(barmode = 'stack',
                xaxis = list(title = "Date"),
-               yaxis = list(title = paste0("<b>",x,"</b>"), range = list(0,1.5)), showlegend = FALSE) %>%
+               yaxis = list(title = paste0("<b>",ylabel,"</b>"), range = list(0,1.5)), showlegend = FALSE) %>%
         add_annotations(x = ~arrow_x_end,
                         y = ~1,
                         text = ~text_display,
