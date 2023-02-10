@@ -18,7 +18,11 @@ normalization_fig1(
     "2021-10-07", "2022-01-05", "2022-04-05", "2022-07-04", "2022-09-22"),
   figwidth = 1500,
   figheight = 8500,
-  margin_subplot = 0.005
+  margin_subplot = 0.005,
+  n1_var_name = "mN1",
+  n2_var_name = "mN2",
+  sitedesc_var = "sys_siteDesc",
+  date_var_name = "sampleDate"
 )
 }
 \arguments{

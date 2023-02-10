@@ -26,7 +26,10 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
                                arrow_x_end  = c(as.Date("2020-07-14"), as.Date("2020-10-12"), as.Date("2021-01-10"), as.Date("2021-04-10"),
                                                 as.Date("2021-07-09"), as.Date("2021-10-07"), as.Date("2022-01-05"), as.Date("2022-04-05"), as.Date("2022-07-04"),as.Date("2022-09-22")),
                                text_display = c("2020-07-14", "2020-10-12", "2021-01-10", "2021-04-10", "2021-07-09", "2021-10-07", "2022-01-05", "2022-04-05", "2022-07-04", "2022-09-22"),
-                               figwidth = 1500, figheight = 8500, margin_subplot = 0.005
+                               figwidth = 1500, figheight = 8500, margin_subplot = 0.005,
+                               n1_var_name = "mN1", n2_var_name = "mN2", sitedesc_var = "sys_siteDesc",
+                               date_var_name = "sampleDate"
+
 ){
   n = length(data)
   datalist = list()
@@ -44,6 +47,14 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
   grouped_df <- big_data[with(big_data, order(sys_PHU_region, sys_PHU, sampleDate)),]
 
   grouped_df_new <- grouped_df[,c(1,78,2:77,79:83)]
+
+  colnames(grouped_df_new)[which(names(grouped_df_new) == `n1_var_name`)] <- "mN1"
+
+  colnames(grouped_df_new)[which(names(grouped_df_new) == `n2_var_name`)] <- "mN2"
+
+  colnames(grouped_df_new)[which(names(grouped_df_new) == `sitedesc_var`)] <- "sys_siteDesc"
+
+  colnames(grouped_df_new)[which(names(grouped_df_new) == `date_var_name`)] <- "sampleDate"
 
   grouped_df_new$present <- 0
   for (i in 1:nrow(grouped_df_new)){
@@ -79,13 +90,13 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
         ) %>%
         layout(barmode = 'stack',
                title = "Presence of mN1/ mN2/ mE viral signal in wastewater across different sites in Ontario across time",
-               xaxis = list(title = "Date"),
-               yaxis = list(title = paste0("<b>",ylabel,"</b>"), range = list(0,1.5)), showlegend = TRUE) %>%
+               xaxis = list(title = "Date", titlefont = list(size =30),),
+               yaxis = list(title = paste0("<b>",ylabel,"</b>"), range = list(0,1.5)), titlefont = list(size =30), showlegend = TRUE) %>%
         add_annotations(x = ~arrow_x_end,
                         y = ~1,
                         text = ~text_display,
                         showarrow = TRUE,
-                        font = list(size = 16))
+                        font = list(size = 20))
     }else{
       if (stri_sub(x, -4) %in% c("WWTP", "WPCP", "PCP")){
         len = nchar(x)
@@ -97,13 +108,13 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
         add_trace(x = ~sampleDate, y = ~present, type = 'bar', color = ~mN1Present, showlegend = FALSE
         ) %>%
         layout(barmode = 'stack',
-               xaxis = list(title = "Date"),
-               yaxis = list(title = paste0("<b>",ylabel,"</b>"), range = list(0,1.5)), showlegend = FALSE) %>%
+               xaxis = list(title = "Date", titlefont = list(size =30)),
+               yaxis = list(title = paste0("<b>",ylabel,"</b>"), range = list(0,1.5)), titlefont = list(size =30), showlegend = FALSE) %>%
         add_annotations(x = ~arrow_x_end,
                         y = ~1,
                         text = ~text_display,
                         showarrow = TRUE,
-                        font = list(size = 16))
+                        font = list(size = 20))
     }
   })
 
