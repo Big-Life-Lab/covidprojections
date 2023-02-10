@@ -89,8 +89,8 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
         add_trace(x = ~sampleDate, y = ~present, type = 'bar', color = ~mN1Present, showlegend = TRUE
         ) %>%
         layout(barmode = 'stack',
-               title = "Presence of mN1/ mN2/ mE viral signal in wastewater across different sites in Ontario across time",
-               xaxis = list(title = "Date", titlefont = list(size =30),),
+               title = "",
+               xaxis = list(title = "Date", titlefont = list(size =30)),
                yaxis = list(title = paste0("<b>",ylabel,"</b>"), range = list(0,1.5)), titlefont = list(size =30), showlegend = TRUE) %>%
         add_annotations(x = ~arrow_x_end,
                         y = ~1,
