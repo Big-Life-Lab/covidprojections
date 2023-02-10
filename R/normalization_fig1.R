@@ -91,12 +91,12 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
         layout(barmode = 'stack',
                title = "",
                xaxis = list(title = "Date", titlefont = list(size =30)),
-               yaxis = list(title = paste0("<b>",ylabel,"</b>"), range = list(0,1.5), titlefont = list(size =25)), showlegend = TRUE, legend = list(font = list(size = 30))) %>%
+               yaxis = list(title = paste0("<b>",ylabel,"</b>"), range = list(0,1.5), titlefont = list(size =20)), showlegend = TRUE, legend = list(font = list(size = 30))) %>%
         add_annotations(x = ~arrow_x_end,
                         y = ~1,
                         text = ~text_display,
                         showarrow = TRUE,
-                        font = list(size = 20))
+                        font = list(size = 18))
     }else{
       if (stri_sub(x, -4) %in% c("WWTP", "WPCP", "PCP")){
         len = nchar(x)
@@ -109,12 +109,12 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
         ) %>%
         layout(barmode = 'stack',
                xaxis = list(title = "Date", titlefont = list(size =30)),
-               yaxis = list(title = paste0("<b>",ylabel,"</b>"), range = list(0,1.5), titlefont = list(size =25)), showlegend = FALSE) %>%
+               yaxis = list(title = paste0("<b>",ylabel,"</b>"), range = list(0,1.5), titlefont = list(size =20)), showlegend = FALSE) %>%
         add_annotations(x = ~arrow_x_end,
                         y = ~1,
                         text = ~text_display,
                         showarrow = TRUE,
-                        font = list(size = 20))
+                        font = list(size = 18))
     }
   })
 
