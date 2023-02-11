@@ -76,6 +76,7 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
   )
 
   site_names <- unique(grouped_df_new$sys_siteDesc)
+  site_names <- site_names[order(nchar(site_names), site_names)]
   mylist <- lapply(site_names, function(x) {
     site <- site_names[[1]]
     if (x == site){
