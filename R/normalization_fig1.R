@@ -77,9 +77,11 @@ normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_E
 
   site_names <- unique(grouped_df_new$sys_siteDesc)
   site_names <- sort(site_names)
-  print("SITE NAMES")
-  print(site_names)
+  #print("SITE NAMES")
+  #print(site_names)
   mylist <- lapply(site_names, function(x) {
+    #print("X")
+    #print(x)
     site <- site_names[[1]]
     if (x == site){
       if (stri_sub(x, -4) %in% c("WWTP", "WPCP", "PCP")){
