@@ -18,56 +18,12 @@
 #' @import purrr
 #' @import stringr
 #' @export
-normalization_fig1 <- function(data= c("../../Data/Observed_data/Waterloo_WWTP_Extended_Aggregated_Data_MR.csv",
-                                       "../../Data/Observed_data/Ottawa_WWTP_Extended_Aggregated_Data_rev_MR.csv",
-                                       "../../Data/Observed_data/Ryerson_WWTP_Extended_Aggregated_Data_VP.csv",
-                                       "../../Data/Observed_data/Toronto_WWTP_Extended_Aggregated_Data_MR.csv",
-                                       "../../Data/Observed_data/Windsor_WWTP_Extended_Aggregated_Data_MR.csv"),
+normalization_fig1 <- function(grouped_df_new= data,
                                arrow_x_end  = c(as.Date("2020-07-14"), as.Date("2020-10-12"), as.Date("2021-01-10"), as.Date("2021-04-10"),
                                                 as.Date("2021-07-09"), as.Date("2021-10-07"), as.Date("2022-01-05"), as.Date("2022-04-05"), as.Date("2022-07-04"),as.Date("2022-09-22")),
                                text_display = c("2020-07-14", "2020-10-12", "2021-01-10", "2021-04-10", "2021-07-09", "2021-10-07", "2022-01-05", "2022-04-05", "2022-07-04", "2022-09-22"),
-                               figwidth = 1500, figheight = 8500, margin_subplot = 0.005,
-                               n1_var_name = "mN1", n2_var_name = "mN2", sitedesc_var = "sys_siteDesc",
-                               date_var_name = "sampleDate"
-
+                               figwidth = 1500, figheight = 8500, margin_subplot = 0.005
 ){
-  n = length(data)
-  datalist = list()
-  # or pre-allocate for slightly more efficiency
-  datalist = vector("list", length = n)
-
-  for (i in 1:n) {
-    # ... make some data
-    dat <- read.csv(data[[i]])
-    datalist[[i]] <- dat # add it to your list
-
-  }
-
-  big_data = do.call(rbind, datalist)
-  grouped_df <- big_data[with(big_data, order(sys_PHU_region, sys_PHU, sampleDate)),]
-
-  grouped_df_new <- grouped_df[,c(1,78,2:77,79:83)]
-
-  colnames(grouped_df_new)[which(names(grouped_df_new) == `n1_var_name`)] <- "mN1"
-
-  colnames(grouped_df_new)[which(names(grouped_df_new) == `n2_var_name`)] <- "mN2"
-
-  colnames(grouped_df_new)[which(names(grouped_df_new) == `sitedesc_var`)] <- "sys_siteDesc"
-
-  colnames(grouped_df_new)[which(names(grouped_df_new) == `date_var_name`)] <- "sampleDate"
-
-  grouped_df_new$present <- 0
-  for (i in 1:nrow(grouped_df_new)){
-    if (!is.na(grouped_df_new[[i, "mN1"]]) | !is.na(grouped_df_new[[i, "mN2"]]) | !is.na(grouped_df_new[[i, "mE"]])){
-      grouped_df_new[[i, "present"]] <- 1
-    } else{
-      grouped_df_new[[i, "present"]] <- 0.2
-    }
-  }
-
-  grouped_df_new[['sampleDate']] <- as.Date(grouped_df_new[['sampleDate']])
-
-  grouped_df_new$mN1Present<-factor(ifelse(grouped_df_new$present<1,"Absent","Present"))
 
   t1 <- list(
     family = "Times New Roman",

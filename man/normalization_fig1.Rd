@@ -5,11 +5,7 @@
 \title{Accepts incoming data and creates plotly plots to show the missingness of data in the variables for mN1, mN2, and mE genes viral signal in the Ontario data for different sites.}
 \usage{
 normalization_fig1(
-  data = c("../../Data/Observed_data/Waterloo_WWTP_Extended_Aggregated_Data_MR.csv",
-    "../../Data/Observed_data/Ottawa_WWTP_Extended_Aggregated_Data_rev_MR.csv",
-    "../../Data/Observed_data/Ryerson_WWTP_Extended_Aggregated_Data_VP.csv",
-    "../../Data/Observed_data/Toronto_WWTP_Extended_Aggregated_Data_MR.csv",
-    "../../Data/Observed_data/Windsor_WWTP_Extended_Aggregated_Data_MR.csv"),
+  grouped_df_new = data,
   arrow_x_end = c(as.Date("2020-07-14"), as.Date("2020-10-12"), as.Date("2021-01-10"),
     as.Date("2021-04-10"), as.Date("2021-07-09"), as.Date("2021-10-07"),
     as.Date("2022-01-05"), as.Date("2022-04-05"), as.Date("2022-07-04"),
@@ -18,16 +14,10 @@ normalization_fig1(
     "2021-10-07", "2022-01-05", "2022-04-05", "2022-07-04", "2022-09-22"),
   figwidth = 1500,
   figheight = 8500,
-  margin_subplot = 0.005,
-  n1_var_name = "mN1",
-  n2_var_name = "mN2",
-  sitedesc_var = "sys_siteDesc",
-  date_var_name = "sampleDate"
+  margin_subplot = 0.005
 )
 }
 \arguments{
-\item{data}{A vector with path of wastewater datasets to be used from different labs.}
-
 \item{arrow_x_end}{A vector of date values to specify where to add an arrow to show the date breaks on the plot.}
 
 \item{text_display}{A vector the same dates as in arrow_x_end vector in form of character values to add as text to the plot.}
@@ -37,6 +27,8 @@ normalization_fig1(
 \item{figheight}{A numeric value specifying the height of the plot.}
 
 \item{margin_subplot}{A numeric value specifying the distance between each subplot for different sites.}
+
+\item{data}{A vector with path of wastewater datasets to be used from different labs.}
 }
 \value{
 A list containing plotly plot showing missingness of data in the variables for the variables mN1, mN2, and mE viral signal in wastewater for different sites in subplots and the combined data with all labs.
